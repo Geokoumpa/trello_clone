@@ -1,0 +1,12 @@
+<ul>
+{{#each project in content}}
+<li>
+    {{#link-to 'project' project}}
+    {{project.title}}
+    lists: {{project.listsCount}}
+    tasks: {{project.tasksCount}}
+    {{/link-to}}
+</li>
+
+{{/each}}
+</ul>

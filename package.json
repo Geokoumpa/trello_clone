@@ -19,10 +19,13 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "body-parser": "^1.12.2",
     "broccoli-asset-rev": "^2.0.0",
+    "connect-restreamer": "^1.0.2",
     "ember-cli": "0.2.0",
     "ember-cli-app-version": "0.3.2",
     "ember-cli-babel": "^4.0.0",
+    "ember-cli-coffeescript": "0.10.0",
     "ember-cli-content-security-policy": "0.3.0",
     "ember-cli-dependency-checker": "0.0.8",
     "ember-cli-htmlbars": "0.7.4",
@@ -31,6 +34,10 @@
     "ember-cli-qunit": "0.3.9",
     "ember-cli-uglify": "1.0.1",
     "ember-data": "1.0.0-beta.15",
-    "ember-export-application-global": "^1.0.2"
+    "ember-drag-drop": "^0.1.4",
+    "ember-export-application-global": "^1.0.2",
+    "express": "^4.12.3",
+    "glob": "^4.5.3",
+    "morgan": "^1.5.2"
   }
 }

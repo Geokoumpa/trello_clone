@@ -1,0 +1,26 @@
+{{#with content as project}}
+<h3>{{project.title}}</h3>
+{{link-to 'back'  'index'}}
+
+{{link-to 'New Task' 'tasks.new'}}
+<ul>
+    {{#each list in project.lists}}
+    <li>
+        {{#draggable-object-target action="moveToList" list=list}}
+        {{list.title}}
+        <ul>
+            {{#each task in list.tasks}}
+            <li>
+                {{#draggable-object content=task}}
+                    <h4>{{task.title}}</h4>
+                    <p>{{task.description}}</p>
+                {{/draggable-object}}
+            </li>
+            {{/each}}
+        </ul>
+        {{/draggable-object-target}}
+    </li>
+    {{/each}}
+</ul>
+{{/with}}
+{{outlet}}

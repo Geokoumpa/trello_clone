@@ -1,0 +1,11 @@
+{{#with content as task}}
+<form {{action 'saveTask' task on="submit"}}>
+    {{input value=task.title}}
+    {{textarea value=task.description}}
+    {{view 'select' content=task.project.lists optionLabelPath="content.title" optionValuePath="content.id" selection=task.list}}
+    <button type="submit">Save</button>
+    <a {{action 'goBackAndDiscard' task}} href="">Back</a>
+</form>
+
+
+{{/with}}
