@@ -1,10 +1,15 @@
 {{#with content as task}}
 <form {{action 'saveTask' task on="submit"}}>
-    {{input value=task.title}}
-    {{textarea value=task.description}}
-    {{view 'select' content=task.project.lists optionLabelPath="content.title" optionValuePath="content.id" selection=task.list}}
+    <label>
+        Title
+        {{input value=task.title}}
+    </label>
+    <label>
+        Description
+        {{textarea value=task.description}}
+    </label>
     <button type="submit">Save</button>
-    <a {{action 'goBackAndDiscard' task}} href="">Back</a>
+    {{link-to 'Back' 'project' task.project}}
 </form>
 
 

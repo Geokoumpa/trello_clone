@@ -8,10 +8,10 @@ Project = DS.Model.extend
 
   listsCount: (->
     @get('lists.length')
-  ).property('lists.@each')
+  ).property('lists.[]')
 
   tasksCount: (->
     @get('tasks.length')
-  ).property('tasks.@each')
+  ).property('tasks.[]')
 
 `export default Project`

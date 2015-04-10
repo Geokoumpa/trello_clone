@@ -3,7 +3,7 @@
 TasksNewRoute = Ember.Route.extend
   model: (params)->
     project = @modelFor("project")
-    list = project.get("lists.firstObject")
+    list = project.get("lists.content.firstObject")
     @get('store').createRecord('task', project: project, list: list)
 
   actions:
@@ -12,10 +12,10 @@ TasksNewRoute = Ember.Route.extend
       project = @modelFor("project")
       task.save().then ()->
         route.transitionTo 'project', project
-    goBackAndDiscard: (task)->
-      project = @modelFor("project")
-      task.deleteRecord()
-      @transitionTo 'project', project
+
+    willTransition: (transition)->
+      task = @controller.get("content")
+      task.deleteRecord() if task.get("isDirty")
 
 
 

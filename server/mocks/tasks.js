@@ -19,7 +19,9 @@ module.exports = function(app) {
   });
 
   tasksRouter.post('/', function(req, res) {
-      res.send(req.body);
+      body = req.body;
+      body.task.id = Math.round(Math.random()*10) + 1000
+      res.send(body);
   });
 
   tasksRouter.get('/:id', function(req, res) {
@@ -33,11 +35,9 @@ module.exports = function(app) {
   });
 
   tasksRouter.put('/:id', function(req, res) {
-    res.send({
-      'tasks': {
-        id: req.params.id
-      }
-    });
+      body = req.body;
+      body.task.id = req.params.id
+      res.send(body);
   });
 
   tasksRouter.delete('/:id', function(req, res) {
