@@ -1,0 +1,134 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; 
+}
+html,
+body {
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+}
+html {
+  background:url(/assets/images/bg.png);
+}
+body {
+  font-family: 'Lobster Two', cursive;
+  color:#fff;
+  font-size:22px;
+  padding-right:270px;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Lobster Two', cursive;
+  color:#fcfafb;
+  font-style: italic;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  margin-top:0;
+  margin-bottom:20px;
+}
+h1 {
+  font-size:72px;
+  color:#998a79;
+  text-shadow: 6px 0 #f7f4f3, 0 6px #f7f4f3, 4px 0 #f7f4f3, 0 4px #f7f4f3;
+}
+h1 small {
+  display:block;
+  font-size:26px;
+  color:#799994;
+  text-shadow: 2px 2px 1px rgba(247, 244, 243, 0.2);
+}
+.dark {
+  color:#898580;
+}
+
+.container {
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding: 20px 15px;
+}
+
+.row {
+  margin:20px -15px;
+}
+.row:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.col {
+  float:left;
+  position:relative;
+  width:33.33333%;
+  padding:0 15px;
+}
+
+@media (max-width:960px) {
+  .col {
+    width:100%;
+  }
+}
+
+a {
+  outline: none !important;
+  text-decoration:none !important;
+}
+
+.task-list {
+  background:#898580;
+  border-radius:6px;
+  padding:15px;
+  font-style: italic;
+  margin-bottom:20px;
+}
+
+.btn-retro {
+    cursor: pointer;
+    border:none;
+    width: 100%;
+  background:#cfc5b0;
+  color:#898580;
+  font-size:18px;
+  padding:12px 15px;
+  font-size:20px;
+  border-radius:4px;
+  margin-bottom:7px;
+  display:block;
+  text-align:center;
+  box-shadow:0 5px #a79f8d;
+  -webkit-box-shadow:0 5px #a79f8d;
+}
+
+.btn-retro:hover {
+  background: #c9bfa9;
+}
+
+select,
+input[type=text] {
+  margin-bottom:15px;
+  padding:12px 15px;
+  border-radius:6px;
+  font-size:16px;
+  border:1px solid #ddd;
+  display:block;
+  width:100%;
+}
+
+.newtask {
+  position:fixed;
+  right:0;
+  top:0;
+  bottom:0;
+  z-index:3;
+  width:250px;
+  border-radius:0;
+  margin-bottom:0;
+}
+h2#project{
+
+  display:block;
+  font-size:26px;
+  color:#799994;
+  text-shadow: 2px 2px 1px rgba(247, 244, 243, 0.2);
+}

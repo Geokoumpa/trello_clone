@@ -1,27 +1,34 @@
 {{#with content as project}}
-<h3>{{project.title}}</h3>
-<p>{{project.tasksCount}} tasks</p>
-{{link-to 'back'  'index'}}
-
-{{link-to 'New Task' 'tasks.new'}}
-<ul>
+<h2 id="project">{{project.title}} ({{project.tasksCount}} tasks)</h2>
+<div class="row">
     {{#each list in project.lists}}
-    <li>
+    <div class="col">
         {{#draggable-object-target action="moveToList" list=list}}
-        {{list.title}}
-        <ul>
-            {{#each task in list.tasks}}
-            <li>
-                {{#draggable-object content=task}}
+        <div class="task-list">
+            <h2>  {{list.title}}</h2>
+            <ul>
+                {{#each task in list.tasks}}
+                <li>
+                    {{#draggable-object content=task}}
                     <h4>{{task.title}}</h4>
                     <p>{{task.description}}</p>
-                {{/draggable-object}}
-            </li>
-            {{/each}}
-        </ul>
+                    {{/draggable-object}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
         {{/draggable-object-target}}
-    </li>
+    </div>
     {{/each}}
-</ul>
+</div>
+<div class="row">
+    <div class="col">
+
+        {{link-to 'New Task' 'tasks.new' class="btn-retro"}}
+    </div>
+    <div class="col">
+        {{link-to 'back'  'index' class="btn-retro"}}
+    </div>
+</div>
 {{/with}}
 {{outlet}}

@@ -1,16 +1,13 @@
 {{#with content as task}}
-<form {{action 'saveTask' task on="submit"}}>
-    <label>
-        Title
-        {{input value=task.title}}
-    </label>
-    <label>
-        Description
-        {{textarea value=task.description}}
-    </label>
-    <button type="submit">Save</button>
-    {{link-to 'Back' 'project' task.project}}
-</form>
+<div class="newtask task-list">
+    <h3>Add New Task</h3>
+    <form {{action 'saveTask' task on="submit"}}>
+        {{input value=task.title placeholder="Task name"}}
+        {{input value=task.description placeholder="Task description"}}
+        <button type="submit" class="btn-retro">Save</button>
+        {{link-to 'Back' 'project' task.project class="btn-retro"}}
+    </form>
 
 
+</div>
 {{/with}}

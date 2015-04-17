@@ -6,6 +6,14 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' dl.dropbox.com dl.dropboxusercontent.com",
+      'font-src': "'self' https://fonts.gstatic.com http://fonts.gstatic.com http://fonts.googleapis.com https://fonts.googleapis.com",
+      'connect-src': "'self'",
+      'img-src': "'self' https://i2.wp.com",
+      'style-src': "'self' 'unsafe-inline' https://fonts.gstatic.com https://fonts.googleapis.com/css?family=Open+Sans http://fonts.googleapis.com"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

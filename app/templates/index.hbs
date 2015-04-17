@@ -1,12 +1,21 @@
-<ul>
-{{#each project in content}}
-<li>
-    {{#link-to 'project' project}}
-    {{project.title}}
-    lists: {{project.listsCount}}
-    tasks: {{project.tasksCount}}
-    {{/link-to}}
-</li>
+<div class="row">
+    <div class="col">
+        <div class="task-list">
+            <ul>
+                {{#each project in content}}
+                <li>
 
-{{/each}}
-</ul>
+                    {{#link-to 'project' project}}
+                    <h4>
+                    {{project.title}}
+                    lists: {{project.listsCount}}
+                    tasks: {{project.tasksCount}}
+                    </h4>
+                    {{/link-to}}
+                </li>
+
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
